@@ -2,100 +2,134 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#090a0e">
-<title>派总电商利润监控表 V2.2｜SKU × 销量自动汇总GMV</title>
+<title>派总电商利润监控表 · 邮箱授权登录</title>
 <style>
-:root{color-scheme:dark;--bg:#090a0e;--panel:#14161d;--in:#0d0f15;--line:#2b2f39;--muted:#9aa0af;--text:#f5f6fa;--green:#37df94;--red:#ff6877;--gold:#f6c979}*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;font-variant-numeric:tabular-nums}button,input{font:inherit}button{cursor:pointer}input{color:var(--text)}.shell{max-width:1180px;margin:0 auto;padding:34px 22px 66px}.head{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:11px;letter-spacing:.2em;color:#969cad;font-weight:700}.title{font-weight:760;font-size:clamp(24px,3.1vw,36px);margin:9px 0 0}.tag{color:#858c9c;border:1px solid var(--line);border-radius:30px;font-size:12px;padding:9px 12px}.hero{border-radius:22px;border:1px solid var(--line);padding:31px 35px 29px;margin:26px 0 12px;background:linear-gradient(135deg,#1a1e27,#0e1016 90%);position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:320px;height:250px;right:-80px;top:-100px;background:radial-gradient(circle,rgba(56,220,148,.07),transparent 70%);pointer-events:none}.hero.loss:before{background:radial-gradient(circle,rgba(255,104,119,.08),transparent 70%)}.eyebrow{font-size:14px;color:#b9bdc8}.money{font-size:clamp(50px,8vw,94px);line-height:1.1;font-weight:800;letter-spacing:-3px;margin:12px 0}.positive{color:var(--green)}.negative{color:var(--red)}.zero{color:#edf0f8}.status{font-size:13px;color:#a5acba}.hero-foot{border-top:1px solid #2c3039;margin-top:25px;padding-top:17px;display:flex;gap:28px;flex-wrap:wrap}.hero-foot small{font-size:11px;color:#9096a5;display:block;margin-bottom:3px}.hero-foot b{font-size:20px}.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:26px}.kpi{padding:20px 27px;border:1px solid var(--line);border-radius:17px;background:var(--panel)}.kpi .label{color:#9ca3b2;font-size:12px}.kpi .value{font-size:clamp(29px,4vw,43px);font-weight:760;letter-spacing:-1px;margin:6px 0 4px}.hint{color:#7b8292;font-size:12px;line-height:1.6}.topline{display:flex;justify-content:space-between;align-items:end;gap:10px;margin-bottom:13px}.section{font-size:17px;font-weight:730}.box{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:20px 22px;margin-bottom:13px}.box-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px}.box-title{font-size:13px;color:#c0c5d1;font-weight:720}.small{font-size:12px;color:#858c9b}.sku-top{display:grid;grid-template-columns:1fr auto;align-items:center;gap:9px;margin-bottom:11px}.sku-card{border:1px solid #313642;border-radius:14px;padding:16px 16px 14px;background:#101218;margin-bottom:10px}.sku-name{display:flex;align-items:center;gap:9px}.chip{font-size:11px;border-radius:6px;background:#292f3e;color:#d7dce8;padding:5px 7px;font-weight:700;white-space:nowrap}.sku-label{color:#cdd2dc;font-size:13px;font-weight:680}.sku-total{font-weight:750;font-size:19px;color:var(--green);letter-spacing:-.5px}.sku-main{display:grid;grid-template-columns:1.2fr 1.05fr 1fr 1fr 1fr;gap:12px}.field{min-width:0}.field label{display:block;font-size:12px;color:#a3aab8;margin-bottom:8px;white-space:nowrap}.num{border:1px solid #373d4c;border-radius:9px;background:var(--in);outline:0;width:100%;min-width:0;font-weight:710;font-size:21px;line-height:1.15;padding:12px 11px}.num:focus{border-color:#aab6d5;box-shadow:0 0 0 2px #aab6d523}.num::-webkit-outer-spin-button,.num::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}.num[type=number]{-moz-appearance:textfield}.quantity{border-color:#687287}.unitline{display:flex;gap:5px;align-items:center}.unitline .num{flex:1}.unit{font-size:12px;color:#828997}.sku-calc{font-size:12px;color:#9da5b5;text-align:right;margin-top:12px}.sku-calc strong{color:#e6ebf5}.gmv-summary{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:15px 0 5px;padding:18px 20px;border:1px solid #31443c;background:linear-gradient(115deg,#0d201c,#10171c);border-radius:14px}.gmv-summary-kicker{font-size:11px;color:#9baba8}.gmv-summary-label{font-size:15px;font-weight:720;color:#f1f5f6;margin-top:4px}.gmv-summary-number{font-size:clamp(27px,5vw,40px);font-weight:800;letter-spacing:-1px;color:var(--green);text-align:right}.gmv-summary-sub{font-size:11px;color:#99a5a6;text-align:right}.sku-legend{margin-top:12px;color:#858c9b;font-size:11px}.row-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}.btn{border:1px solid #414757;border-radius:9px;background:#20232b;color:#d5dbe7;font-size:12px;font-weight:650;padding:10px 14px}.btn:disabled{opacity:.35;cursor:not-allowed}.btn:hover:not(:disabled){background:#292e3a}.btn-clear{background:transparent;border-color:#343a46;color:#a6acbb}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px 13px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.live .num{font-size:29px;padding:16px 14px}.sku-stats{display:flex;gap:22px;align-items:center;flex-wrap:wrap;border-top:1px solid #2b303a;padding-top:12px;margin-top:6px}.sku-stats b{font-size:17px}.warn{color:var(--gold);font-size:12px;line-height:1.65;margin-top:12px}.footer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px}.note{font-size:11px;color:#808798;line-height:1.8;margin:20px 1px 0}.save{font-size:11px;color:#7e8797}.model-note{padding:11px 13px;border:1px dashed #303746;background:#10131a;border-radius:10px;font-size:12px;color:#9ba3b4;line-height:1.7}.editable-mark{color:#d6dded;font-weight:700}.tooltip{color:#858b99;font-size:11px}.hidden{display:none!important}@media(max-width:760px){.shell{padding:20px 13px 56px}.head .tag{display:none}.title{font-size:24px}.hero{padding:26px 21px;margin-top:21px}.money{font-size:clamp(46px,11vw,65px);letter-spacing:-2px}.hero-foot{gap:25px}.kpi{padding:17px 14px}.kpi .value{font-size:29px}.kpi .label{font-size:11px}.kpi .hint{font-size:10px}.box{padding:17px 13px}.sku-card{padding:12px}.sku-main{grid-template-columns:repeat(6,minmax(0,1fr));gap:11px 8px}.sku-main .field:nth-child(1){grid-column:span 3}.sku-main .field:nth-child(2){grid-column:span 3}.sku-main .field:nth-child(3),.sku-main .field:nth-child(4),.sku-main .field:nth-child(5){grid-column:span 2}.sku-main .num{font-size:19px;padding:12px 8px}.sku-total{font-size:17px}.gmv-summary{padding:15px 12px}.gmv-summary-number{font-size:29px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 9px}.grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.num{font-size:20px;padding:12px 9px}.live .num{font-size:26px}.field label{font-size:11px}.small{font-size:11px}}@media(max-width:360px){.hero{padding:20px 15px}.box{padding:13px 10px}.sku-card{padding:11px 9px}.num{font-size:18px;padding:11px 6px}}
-
-/* Contact strip: independent of financial calculations */
-.contact-card{margin-top:18px;display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap;padding:18px 22px;background:#121820;border:1px solid #2f5549;border-radius:16px}
-.contact-intro{font-size:12px;color:#b0bdc3}.contact-id{font-size:23px;font-weight:800;letter-spacing:.03em;color:var(--green);user-select:all}.copy-tip{font-size:12px;color:#9cb7af;min-height:1em}
-@media(max-width:760px){.contact-card{padding:16px 14px}.contact-id{font-size:21px}}
-
+:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#090a0e;color:#f2f5f7}
+*{box-sizing:border-box}body{margin:0;min-height:100vh}
+.page{max-width:520px;margin:0 auto;padding:clamp(40px,9vh,90px) 20px 48px}
+.brand{color:#47d6a5;letter-spacing:.19em;font-size:12px;font-weight:700;margin-bottom:18px}
+h1{font-size:clamp(27px,6vw,35px);margin:0 0 12px}p{color:#a8b6bf;line-height:1.75;font-size:14px;margin:0 0 24px}
+.panel{border:1px solid #2a3743;background:linear-gradient(145deg,#161d27,#10151c);border-radius:18px;padding:24px}
+label{display:block;font-size:13px;color:#b5c3cc;margin:16px 0 9px}
+input{width:100%;background:#0a1118;border:1px solid #3a4958;border-radius:11px;padding:14px;font-size:17px;color:#fff;outline:none}
+input:focus{border-color:#47d6a5}
+button{background:#27c990;border:0;color:#062018;font-weight:800;font-size:15px;border-radius:11px;padding:14px 20px;cursor:pointer;width:100%;margin-top:18px}
+button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:#263442;color:#ecf3f5}
+.notice{font-size:13px;min-height:20px;margin-top:14px;line-height:1.7;color:#ffce8f}
+.hint{font-size:12px;color:#93a6b1;margin-top:20px;line-height:1.75}
+.hidden{display:none!important}.workspace{max-width:1400px;margin:auto;padding:10px}
+.bar{position:sticky;top:0;z-index:2;background:#111820;border:1px solid #2a3743;border-radius:12px;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center;padding:8px 12px;gap:10px;font-size:13px;color:#b9c7d0}
+.bar button{margin:0;width:auto;padding:9px 15px;font-size:12px}.bar strong{color:#47d6a5}
+iframe{display:block;width:100%;border:0;min-height:650px;background:#090a0e}
 </style>
-</head>
-<body>
-<main class="shell">
-<header class="head"><div><div class="brand">PAI COMMERCE / LIVE OPERATIONS</div><h1 class="title">派总电商利润监控表</h1></div><div class="tag">多SKU 自动汇总 GMV · V2.2</div></header>
-<section id="hero" class="hero loss" aria-live="polite">
-  <div class="eyebrow">今日预计净利润</div>
-  <div id="profit" class="money negative">−¥3,000</div>
-  <div id="status" class="status">当前亏损 · 已扣除今日全部固定成本</div>
-  <div class="hero-foot"><div><small>今日累计支付 GMV（自动求和）</small><b id="totalGMV">¥0</b></div><div><small>累计售出件数</small><b id="totalQty">0 件</b></div></div>
-  <div id="warn" class="warn hidden"></div>
-</section>
-<div class="kpis">
-<section class="kpi"><div class="label">当前综合 ROI</div><div id="roi" class="value">—</div><div class="hint">SKU成交额 ÷ 累计广告费</div></section>
-<section class="kpi"><div class="label">今日含全部成本保本 ROI</div><div id="breakEven" class="value">—</div><div class="hint" id="breakEvenNote">有成交后自动计算</div></section>
-</div>
-<div class="topline"><div class="section">填写今天的数据</div><div class="small">改数字，上方自动更新</div></div>
-<section class="box"><div class="box-head"><div class="box-title">01 / SKU 销售明细</div><div class="small">单价 × 数量 = 该SKU的GMV；自动合计</div></div><div id="skus"></div><div class="gmv-summary"><div><div class="gmv-summary-kicker">系统自动计算，无须填写GMV</div><div class="gmv-summary-label">今日累计支付 GMV</div></div><div><div id="skuGmvSum" class="gmv-summary-number">¥0</div><div id="skuGmvSumNote" class="gmv-summary-sub">0 件 · 0 个 SKU</div></div></div><div class="row-actions"><button class="btn" id="addSKU" type="button">＋ 增加 SKU</button><button class="btn btn-clear" id="removeSKU" type="button">− 减少 SKU</button></div><div class="sku-legend">最多5款，默认3款。每款单独填成交单价和卖出件数，GMV逐项相加。成交价请填实付价（券后价）。</div></section>
-<section class="box live"><div class="box-head"><div class="box-title">02 / 实时广告消耗</div><div class="small">每小时更新累计值，利润立即变化</div></div><div class="grid two"><div class="field"><label for="ad">当前累计广告消耗</label><div class="unitline"><input class="num" type="number" inputmode="decimal" min="0" step="any" id="ad" value="0"><span class="unit">元</span></div></div><div class="field"><label>当前累计支付GMV（由SKU生成）</label><div class="unitline"><output id="gmvLive" style="font-size:clamp(24px,3vw,34px);font-weight:800;color:var(--green);padding:14px 0;display:block">¥0</output></div><div class="tooltip">= 每款SKU实付单价 × 实际卖出件数的总和</div></div></div></section>
-<section class="box"><div class="box-head"><div class="box-title">03 / 费率与退货</div></div><div class="grid"><div class="field"><label for="refund">预计最终退货退款率</label><div class="unitline"><input class="num" id="refund" type="number" inputmode="decimal" min="0" max="100" step="any" value="20"><span class="unit">%</span></div></div><div class="field"><label for="loss">每笔退款额外货损</label><div class="unitline"><input class="num" id="loss" type="number" inputmode="decimal" min="0" step="any" value="8"><span class="unit">元</span></div></div><div class="field"><label for="tax">税费预算率</label><div class="unitline"><input class="num" id="tax" type="number" inputmode="decimal" min="0" max="100" step="any" value="2.5"><span class="unit">%</span></div></div><div class="field"><label for="management">管理费率</label><div class="unitline"><input class="num" id="management" type="number" inputmode="decimal" min="0" max="100" step="any" value="3"><span class="unit">%</span></div></div><div class="field"><label for="platform">平台及其他费率</label><div class="unitline"><input class="num" id="platform" type="number" inputmode="decimal" min="0" max="100" step="any" value="0"><span class="unit">%</span></div></div></div></section>
-<section class="box"><div class="box-head"><div class="box-title">04 / 今天全部固定成本</div><div class="small">不按直播时长分摊</div></div><div class="grid three"><div class="field"><label for="labor">今日人工成本</label><div class="unitline"><input class="num" id="labor" type="number" inputmode="decimal" min="0" step="any" value="3000"><span class="unit">元</span></div></div><div class="field"><label for="venue">今日场地成本</label><div class="unitline"><input class="num" id="venue" type="number" inputmode="decimal" min="0" step="any" value="0"><span class="unit">元</span></div></div><div class="field"><label for="other">今日其他固定成本</label><div class="unitline"><input class="num" id="other" type="number" inputmode="decimal" min="0" step="any" value="0"><span class="unit">元</span></div></div></div></section>
-<div class="footer"><button id="newDay" class="btn" type="button">新的一天：清零销量与广告费</button><div id="save" class="save">数据自动保存到本浏览器</div></div>
-<aside class="contact-card" aria-label="派总微信联系方式"><span class="contact-intro">意见反馈 / 商务交流 · 微信</span><strong class="contact-id" id="wechatId">paizong403</strong><button type="button" class="btn" id="copyWechat">复制微信号</button><span class="copy-tip" id="copyTip" role="status"></span></aside>
-<p class="note">利润口径：各SKU支付GMV = 该SKU实付单价×售出件数，直播间GMV = 所有SKU支付GMV相加；预计退款收入按有效支付金额计算；产品裸成本按各SKU预计未退款数量计算；包材和去程快递按各SKU全部售出数量计算；每笔退款另扣额外货损；税/管理/平台费用按预计退款后收入计算；再减去今日累计广告消耗和全天固定成本。假设各SKU退款率相同、每件商品为一笔订单且退款商品裸成本可回收。结果是预计净利润，不是已结算的最终财务利润。直播间综合ROI可能与平台广告归因ROI不同。商品价和成本均为可修改演示值。</p>
+</head><body>
+<main class="page" id="login">
+  <div class="brand">PAI COMMERCE / AUTHORIZED ACCESS</div>
+  <h1>派总电商利润监控表</h1>
+  <p>工作台仅向授权用户开放。已获得使用资格的用户，请使用报白邮箱验证后进入。</p>
+  <section class="panel">
+    <div id="emailForm">
+      <label for="email">授权邮箱</label>
+      <input id="email" autocomplete="email" type="email" inputmode="email" placeholder="请输入报白邮箱">
+      <button id="send" type="button">发送邮箱登录邮件</button>
+    </div>
+    <div id="codeForm" class="hidden">
+      <label for="code">邮箱验证码</label>
+      <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="如邮件含验证码，请在此输入">
+      <button type="button" id="verify">验证并进入</button>
+      <button class="secondary" id="resend" type="button">重新发送邮件</button>
+    </div>
+    <div class="notice" id="message" role="status" aria-live="polite"></div>
+    <div class="hint">如收到的是登录链接，请点击邮件中的链接。只有已经报白的邮箱才能进入工作台；能收到验证邮件不代表已经授权。</div>
+  </section>
 </main>
+<section class="workspace hidden" id="workspace">
+  <div class="bar"><span>已授权：<strong id="userEmail"></strong></span><button type="button" class="secondary" id="logout">退出登录</button></div>
+  <iframe title="派总电商利润监控表" id="app" referrerpolicy="no-referrer"></iframe>
+</section>
 <script>
-(function(){
-'use strict';
-const KEY='pai_live_profit_multi_sku_v22';
-const presets=[{name:'SKU 1',price:139,qty:0,goods:45,pack:8,ship:7},{name:'SKU 2',price:159,qty:0,goods:55,pack:8,ship:7},{name:'SKU 3',price:199,qty:0,goods:70,pack:8,ship:7},{name:'SKU 4',price:0,qty:0,goods:0,pack:0,ship:0},{name:'SKU 5',price:0,qty:0,goods:0,pack:0,ship:0}];
-const state={skus:presets.slice(0,3).map(x=>({...x})),ad:0,refund:20,loss:8,tax:2.5,management:3,platform:0,labor:3000,venue:0,other:0};
-try{const raw=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem('pai_live_profit_multi_sku_v21')||'null');if(raw&&typeof raw==='object'){for(let k in state){if(k==='skus'){if(Array.isArray(raw.skus)&&raw.skus.length>=3&&raw.skus.length<=5){state.skus=raw.skus.map((x,i)=>({...presets[i],...x}));}}else if(Object.hasOwn(raw,k))state[k]=raw[k];}}}catch(e){}
-const $=id=>document.getElementById(id);const ids=['ad','refund','loss','tax','management','platform','labor','venue','other'];
-const n=v=>Number.isFinite(Number(v))?Math.max(0,Number(v)):0;
-const fixRate=v=>Math.min(100,n(v))/100;
-const money=x=>'¥'+Math.abs(x).toLocaleString('zh-CN',{maximumFractionDigits:0});
-const round=x=>Math.abs(x)<.005?0:x;
-const htmlSafe=s=>String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-function renderSKUs(){
- $('skus').innerHTML=state.skus.map((s,i)=>`<div class="sku-card" data-sku="${i}"><div class="sku-top"><div class="sku-name"><span class="chip">${String(i+1).padStart(2,'0')}</span><span class="sku-label">第 ${i+1} 款 SKU</span></div><div class="sku-total" id="skuTotal${i}">GMV ¥0</div></div><div class="sku-main"><div class="field"><label>成交实付单价</label><div class="unitline"><input aria-label="第${i+1}款成交单价" class="num" data-key="price" type="number" min="0" inputmode="decimal" step="any" value="${htmlSafe(s.price)}"><span class="unit">元</span></div></div><div class="field"><label>今天卖了几件</label><div class="unitline"><input aria-label="第${i+1}款已售数量" class="num quantity" data-key="qty" type="number" min="0" step="1" inputmode="numeric" value="${htmlSafe(s.qty)}"><span class="unit">件</span></div></div><div class="field"><label>裸成本/件</label><div class="unitline"><input aria-label="第${i+1}款货品成本" class="num" data-key="goods" type="number" min="0" inputmode="decimal" step="any" value="${htmlSafe(s.goods)}"><span class="unit">元</span></div></div><div class="field"><label>包材/件</label><div class="unitline"><input aria-label="第${i+1}款包材" class="num" data-key="pack" type="number" min="0" inputmode="decimal" step="any" value="${htmlSafe(s.pack)}"><span class="unit">元</span></div></div><div class="field"><label>快递/件</label><div class="unitline"><input aria-label="第${i+1}款快递" class="num" data-key="ship" type="number" min="0" inputmode="decimal" step="any" value="${htmlSafe(s.ship)}"><span class="unit">元</span></div></div></div><div class="sku-calc" id="skuCalc${i}">¥${htmlSafe(s.price)} × ${htmlSafe(s.qty)} 件 = <strong>¥0</strong></div></div>`).join('');
- $('addSKU').disabled=state.skus.length>=5; $('removeSKU').disabled=state.skus.length<=3;
- $('skus').querySelectorAll('input').forEach(inp=>inp.addEventListener('input',e=>{const root=e.target.closest('[data-sku]');const i=+root.dataset.sku;state.skus[i][e.target.dataset.key]=e.target.value;recalc();}));
- recalc();
+(()=>{
+"use strict";
+const API="https://rsiqtfaudqfdhckjovse.supabase.co";
+const KEY="sb_publishable_2a9ay2duBlIDb_DXyyORfg_l8wnEYGn";
+const SESSION="pai_profit_auth_session_v1";
+const $=id=>document.getElementById(id);
+let session=null,locked=false;
+const msg=(message,error=false)=>{$("message").textContent=message;$("message").style.color=error?"#ff7c8a":"#ffce8f";};
+const headers=()=>({"apikey":KEY,"Content-Type":"application/json"});
+const save=()=>{try{localStorage.setItem(SESSION,JSON.stringify(session));}catch(e){}};
+const clear=()=>{session=null;try{localStorage.removeItem(SESSION);}catch(e){}};
+async function call(url,options={}){
+ const res=await fetch(url,options);
+ const data=await res.json().catch(()=>({}));
+ if(!res.ok)throw new Error(data.msg||data.message||data.error_description||data.error||"服务暂不可用");
+ return data;
 }
-function recalc(){
- const refund=fixRate(state.refund),extra=n(state.loss),rates=fixRate(state.tax)+fixRate(state.management)+fixRate(state.platform),f=n(state.labor)+n(state.venue)+n(state.other);
- let gross=0,units=0,keptCOGS=0,shipPack=0,returnLoss=0;
- for(let i=0;i<state.skus.length;i++){const s=state.skus[i],q=Math.floor(n(s.qty)),price=n(s.price),goods=n(s.goods),pack=n(s.pack),ship=n(s.ship);const sales=q*price;gross+=sales;units+=q;keptCOGS+=q*(1-refund)*goods;shipPack+=q*(pack+ship);returnLoss+=q*refund*extra;const show=$('skuTotal'+i);if(show)show.textContent='GMV '+money(sales);const calc=$('skuCalc'+i);if(calc)calc.innerHTML=money(price)+' × '+q.toLocaleString('zh-CN')+' 件 = <strong>'+money(sales)+'</strong>'; }
- const actualGMV=gross;const settled=actualGMV*(1-refund);const fee=settled*rates;const beforeAds=settled-keptCOGS-shipPack-returnLoss-fee;const p=round(beforeAds-n(state.ad)-f);
- $('profit').textContent=(p<0?'−':p>0?'+':'')+money(p);$('profit').className='money '+(p<0?'negative':p>0?'positive':'zero');$('hero').className='hero'+(p<0?' loss':'');
- $('status').textContent=p<0?'当前亏损 · 已扣除今日全部固定成本':p>0?'当前盈利 · 已扣除今日全部固定成本':'当前保本 · 已扣除今日全部固定成本';
- $('totalGMV').textContent=money(actualGMV);$('totalQty').textContent=units.toLocaleString('zh-CN')+' 件';$('skuGmvSum').textContent=money(actualGMV);$('skuGmvSumNote').textContent=units.toLocaleString('zh-CN')+' 件 · '+state.skus.filter(s=>n(s.qty)>0).length+' 个SKU有销量';$('gmvLive').textContent=money(actualGMV);
- $('roi').textContent=n(state.ad)>0?(actualGMV/n(state.ad)).toFixed(2):'—';
- if(actualGMV<=0){$('breakEven').textContent='—';$('breakEvenNote').textContent='有成交后自动计算';}
- else if(beforeAds-f<=0){$('breakEven').textContent='无法保本';$('breakEvenNote').textContent='按当前销量，广告费为0也无法保本';}
- else{$('breakEven').textContent=(actualGMV/(beforeAds-f)).toFixed(2);$('breakEvenNote').textContent='当前销售规模 · 已含全部成本';}
- const msgs=[];
- if(state.skus.some(s=>n(s.qty)>0&&n(s.price)===0))msgs.push('存在有销量却未填写成交价的SKU，利润可能不准确。');
- if(state.skus.some(s=>n(s.qty)>0&&n(s.goods)===0))msgs.push('存在有销量却未填写产品裸成本的SKU，请核对。');
- if(state.skus.some(s=>Number(s.qty)!==Math.floor(n(s.qty))))msgs.push('SKU销量按整数件数计入。');
- const warning=$('warn');warning.textContent=msgs.join(' ');warning.classList.toggle('hidden',!msgs.length);
- try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
+async function freshToken(){
+ if(!session?.access_token)throw new Error("请先验证邮箱");
+ if(Date.now()<(session.expires_at_ms||0)-60000)return session.access_token;
+ if(!session.refresh_token)throw new Error("登录已失效，请重新验证邮箱");
+ const data=await call(API+"/auth/v1/token?grant_type=refresh_token",{method:"POST",headers:headers(),body:JSON.stringify({refresh_token:session.refresh_token})});
+ session={...data,expires_at_ms:Date.now()+(data.expires_in||3600)*1000};save();return session.access_token;
 }
-for(const id of ids){$(id).value=state[id];$(id).addEventListener('input',e=>{state[id]=e.target.value;recalc();});}
-$('addSKU').addEventListener('click',()=>{if(state.skus.length<5){state.skus.push({...presets[state.skus.length]});renderSKUs();}});
-$('removeSKU').addEventListener('click',()=>{if(state.skus.length>3&&confirm('删除最后一款SKU及其销量数据？')){state.skus.pop();renderSKUs();}});
-$('newDay').addEventListener('click',()=>{if(!confirm('开始新的一天？将清零各SKU销量和广告消耗，保留每款SKU价格与成本、费率及固定成本。'))return;state.skus.forEach(s=>s.qty=0);state.ad=0;$('ad').value=0;renderSKUs();window.scrollTo({top:0,behavior:'smooth'});});
-
-// Copy contact only; does not change any of the profit calculation state.
-$('copyWechat').addEventListener('click',async()=>{
- const id=$('wechatId').textContent.trim();
+async function enter(){
+ if(locked)return;
+ locked=true;msg("正在校验使用权限...");
  try{
-   if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(id);}
-   else{
-     const temp=document.createElement('textarea');temp.value=id;temp.setAttribute('readonly','');temp.style.position='fixed';temp.style.opacity='0';document.body.appendChild(temp);temp.select();
-     const ok=document.execCommand('copy');temp.remove();if(!ok)throw new Error('copy unavailable');
-   }
-   $('copyTip').textContent='已复制';
- }catch(err){$('copyTip').textContent='请长按微信号复制';}
-});
-
-renderSKUs();
+   const token=await freshToken();
+   const d=await call(API+"/functions/v1/profit-workbench-access",{headers:{"apikey":KEY,"Authorization":"Bearer "+token}});
+   if(d.authorized!==true||typeof d.html!=="string")throw new Error("授权验证失败");
+   $("userEmail").textContent=d.email||"";
+   $("workspace").classList.remove("hidden");$("login").classList.add("hidden");
+   const frame=$("app");
+   frame.onload=()=>{try{
+     const resize=()=>{frame.style.height=Math.max(650,frame.contentDocument.documentElement.scrollHeight+18)+"px";};
+     resize();new ResizeObserver(resize).observe(frame.contentDocument.body);
+   }catch(e){}};
+   frame.srcdoc=d.html;msg("");
+ }catch(e){
+   $("workspace").classList.add("hidden");$("login").classList.remove("hidden");
+   const reasons={not_approved:"该邮箱尚未报白，请联系派总开通使用资格。",email_not_verified:"请先完成邮箱验证。",session_invalid:"登录已失效，请重新登录。",Invalid_JWT:"登录已失效，请重新登录。"};
+   msg(reasons[e.message]||e.message,true);
+   if(["session_invalid","Invalid_JWT"].includes(e.message))clear();
+ }finally{locked=false;}
+}
+async function send(){
+ const email=$("email").value.trim().toLowerCase();
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg("请输入正确的邮箱地址",true);return;}
+ $("send").disabled=true;$("resend").disabled=true;msg("正在发送邮件...");
+ try{
+   const redirect=location.origin+location.pathname;
+   await call(API+"/auth/v1/otp?redirect_to="+encodeURIComponent(redirect),{method:"POST",headers:headers(),body:JSON.stringify({email,create_user:true})});
+   $("codeForm").classList.remove("hidden");msg("邮件已发送。请输入验证码，或点击邮件中的登录链接。");
+ }catch(e){msg(e.message,true);}
+ finally{$("send").disabled=false;$("resend").disabled=false;}
+}
+async function verify(){
+ const email=$("email").value.trim().toLowerCase(),token=$("code").value.trim();
+ if(!token){msg("请输入邮件中的验证码",true);return;}
+ $("verify").disabled=true;msg("正在验证...");
+ try{
+   const d=await call(API+"/auth/v1/verify",{method:"POST",headers:headers(),body:JSON.stringify({email,token,type:"email"})});
+   session={...d,expires_at_ms:Date.now()+(d.expires_in||3600)*1000};save();await enter();
+ }catch(e){msg(e.message,true);}
+ finally{$("verify").disabled=false;}
+}
+$("send").onclick=send;$("verify").onclick=verify;$("resend").onclick=send;
+$("logout").onclick=async()=>{
+ const previous=session;clear();$("workspace").classList.add("hidden");$("login").classList.remove("hidden");$("app").removeAttribute("srcdoc");msg("已退出登录。");
+ if(previous?.access_token)fetch(API+"/auth/v1/logout",{method:"POST",headers:{...headers(),"Authorization":"Bearer "+previous.access_token}}).catch(()=>{});
+};
+(async()=>{
+ const hash=new URLSearchParams(location.hash.slice(1));
+ if(hash.get("access_token")){
+   session={access_token:hash.get("access_token"),refresh_token:hash.get("refresh_token"),expires_at_ms:Date.now()+(Number(hash.get("expires_in"))||3600)*1000};
+   save();history.replaceState(null,"",location.pathname+location.search);
+ }else{try{session=JSON.parse(localStorage.getItem(SESSION)||"null");}catch(e){clear();}}
+ if(session?.access_token)await enter();
+})();
 })();
 </script>
-</body>
-</html>
+</body></html>
